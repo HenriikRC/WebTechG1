@@ -35,10 +35,14 @@ Route::get('/games', [GameController::class, 'index']);
 Route::get('/all-reviews',[ReviewController::class,'fetchAll']);
 Route::get('/review', [ReviewController::class, 'fetchAll']);
 Route::get('/review/{userid}', [ReviewController::class, 'fetchFromID']);
-Route::post('/review', [ReviewController::class, 'insertOne']);
-Route::delete('/review/{id}', [ReviewController::class, 'deleteOne']);
-Route::put('/review/{id}', [ReviewController::class, 'updateOne']);
-Route::post('/gamepage/{name}/review', [ReviewController::class, 'insertOne']);
+Route::post('/review', [ReviewController::class, 'insertOne'])
+    ->middleware(['auth', 'verified']);
+Route::delete('/review/{id}', [ReviewController::class, 'deleteOne'])
+    ->middleware(['auth', 'verified']);
+Route::put('/review/{id}', [ReviewController::class, 'updateOne'])
+    ->middleware(['auth', 'verified']);
+Route::post('/gamepage/{name}/review', [ReviewController::class, 'insertOne'])
+    ->middleware(['auth', 'verified']);
 Route::get('/gamepage/{name}/review', [ReviewController::class, 'fetchByGame']);
 
 
