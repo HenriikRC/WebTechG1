@@ -11,7 +11,7 @@ class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
-*/
+     */
     public function welcomeOurFavorites(){
 
         $game1 = DB::table('games')->where('game_id', 8)->first();
@@ -25,6 +25,30 @@ class GameController extends Controller
     public function index()
     {
         return Game::all();
+    }
+
+
+    public function indexWithPagination(Request $request){
+        $findGames = Game::query();
+
+        $search = $request->input('search');
+
+        if($search){
+            $findGames->where('name', 'ilike', '%'.$search.'%');
+        }
+
+        $sort = $request->input('sort');
+        $order = $request->input('order', 'asc');
+
+        if($sort){
+            $findGames->orderBy($sort, $order);
+        }
+
+        $games = $findGames->paginate(15);
+
+        return view('browse', [
+            'games'=>$games,
+            'search'=>$search]);
     }
 
     /**
