@@ -17,22 +17,18 @@
 <section class="hero">
     <h1>Welcome to the Ultimate Game Library</h1>
     <h2>Discover new games, read reviews, and level up your gaming experience!</h2>
-
     <div id="action_buttons">
     <a href="browse">
       <button id="get_started">
         Get Started
       </button>
     </a>
-        @guest
     <a href="register">
       <button id="get_started">
         Register
       </button>
     </a>
-        @endguest
     </div>
-
 </section>
 </div>
 
