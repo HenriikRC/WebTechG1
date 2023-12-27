@@ -41,8 +41,8 @@ body{
     background-color: rgb(247, 246, 246);
     padding: 5%;
     font-size: small;
-    overflow: hidden; /* Gemmer væk alt det der flyder udover containeren*/
-    word-wrap: break-word; /*Hvis ordet er for stort bevæger det sig ned på næste linje */
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .container-title{

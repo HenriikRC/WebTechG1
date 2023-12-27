@@ -17,6 +17,7 @@
     <form method="GET" action="{{ route('games.browse') }}">
         <input type="text" name="search" placeholder="Search by Name">
         <button type="submit">Search</button>
+        <button href="{{ url('/browse') }}">Reset</button>
     </form>
 </div>
 
