@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e7bbbc0c8d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css-lul/index-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css-lul/Extension-Carousel.css') }}">
     <script defer src="{{ asset('js-lul/index-script.js') }}"></script>
+    <script defer src="{{ asset('js-lul/itemCarousel.js') }}"></script>
 
     <title>Document</title>
 </head>
@@ -17,31 +19,29 @@
 <section class="hero">
     <h1>Welcome to the Ultimate Game Library</h1>
     <h2>Discover new games, read reviews, and level up your gaming experience!</h2>
-
     <div id="action_buttons">
     <a href="browse">
       <button id="get_started">
         Get Started
       </button>
     </a>
-        @guest
     <a href="register">
       <button id="get_started">
         Register
       </button>
     </a>
-        @endguest
     </div>
-
 </section>
 </div>
 
 
 <div class="fixed-container">
-<section class="game_collection">
-    <div class="grid" id="gridGamesTopRated">
-    <h1 class="headliner">BEST RATED GAMES</h1>
-        </div>
+<section class="carousel_collection">
+    <h1 class="carousel_header">BEST RATED GAMES</h1>
+    <button class="pre-btn"><img src="img/arrow.png" alt=""></button>
+    <button class="nxt-btn"><img src="img/arrow.png" alt=""></button>
+    <div class="carousel_container" id="carousel_container">
+    </div>
 </section>
 </div>
 
@@ -89,8 +89,8 @@
 <div class="fixed-container">
 <section class="game_collection">
     <div class="grid" id="gridGamesNewestGames">
-    <h1 class="headliner">NEWEST GAMES</h1>
-        </div>
+        <h1 class="headliner">NEWEST GAMES</h1>
+    </div>
 </section>
 </div>
 

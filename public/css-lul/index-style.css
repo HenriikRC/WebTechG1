@@ -37,12 +37,12 @@ body{
 }
 
 .grid-item {
-    position: relative; /*Placerer hover-effekten/kassen samt titlen og rating stjernene relativt til det specifikke grid*/
-    overflow: hidden; /*Sørger for at tekst ikke ryger udover griddet*/
+    position: relative;
+    overflow: hidden;
 }
 
 .grid-item:hover img {
-    filter: brightness(0.6); /*Bestemmer filterets/hover-effektens styrke*/
+    filter: brightness(0.6);
 }
 
 .grid-item:hover .overlay {
