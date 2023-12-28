@@ -27,15 +27,12 @@ Route::get('/', [GameController::class, 'welcomeOurFavorites'])
 
 // ADMIN ROUTES
 Route::middleware(['auth', 'admin'])->group(function() {
-    Route::get('/admin/games',[App\Http\Controllers\GameController::class, 'indexWithView'])
-        ->name('admin.games');
+    Route::delete('/game/{game_id}', [GameController::class, 'destroy']);
+    Route::put('/game/{game_id}', [GameController::class, 'update']);
+    Route::post('/game', [GameController::class, 'store']);
 
 });
 
-// ADMIN ROUTES
-Route::delete('/game/{game_id}', [GameController::class, 'destroy']);
-Route::put('/game/{game_id}', [GameController::class, 'update']);
-Route::post('/game', [GameController::class, 'store']);
 
 /*API calls
 Key takeaway: returns data instead of a view
